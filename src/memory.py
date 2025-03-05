@@ -16,3 +16,9 @@ class Memory:
         Store a word (default 4 bytes) into memory at the specified address.
         """
         self.memory[address:address + size] = value.to_bytes(size, 'little')
+
+    def store_word(self, address, value):
+        """
+        Store a 32-bit word into memory at the specified address.
+        """
+        self.store(address, value, size=4)
